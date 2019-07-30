@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Python - Guess the Number
+    </title>
+    <link rel="stylesheet" type="text/css" href="/static/project_style.css">
+  </head>
+  <body>
+    <p>
+      The Rules of this game is simple.<br>
+      I'll pick a number between 1 and 10 and you have three guesses.<br>
+      I'll also give you hints to what it is with higher and lower.<br>
+      ------------------------------------------------------------<br>
+      Let's begin!<br>
+      ------------------------------------------------------------<br>
+    </p>
+    {% if current_guess>0 %}
+        {% if winning==False %}
+        <p>
+                You have {{current_guess}} guesses left.
+        </p>
+        <form action='/response_game1' method='POST'>
+                Enter your Guess:<input type='number' name='guess1' id='enterField'>
+                <input name="confirmation" type='submit'>
+        </form>
+        {% endif %}
+    {% endif %}
+    {% if user_guess %}
+        {% if user_guess|int>winning_no %}
+                <p>
+                Guess Lower<br>
+                ------------------------------------------------------------<br>
+                </p>
+        {% elif user_guess|int<winning_no %}
+                <p>
+                Guess Higher<br>
+                ------------------------------------------------------------<br>
+                </p>
+        {% elif user_guess|int==winning_no %}
+                {% if winning %}
+                        <p>
+                        You've Won<br>
+                        ------------------------------------------------------------<br>
+                        </p>
+                        <a href='/game1'>
+                           <button>
+                              RESTART
+                           </button>
+                        </a>
+                {% endif %}
+        {% elif (user_guess|int<1) or (user_guess|int>10) %}
+                <p>
+                Invalid Guess<br>
+                ------------------------------------------------------------<br>
+                </p>
+        {% endif %}
+    {% endif %}
+    {% if current_guess==0 %}
+        {% if winning==False %}
+        <p>
+        Sorry you are out of guesses.<br>
+        The correct number is {{ winning_no }}.<br>
+        ------------------------------------------------------------<br>
+        </p>
+        <a href='/game1'>
+           <button>
+            RESTART
+           </button>
+        </a>
+        {% endif %}
+    {% endif %}
+    <p>
+    ------------------------------------------------------------<br>
+    </p>
+    <a href='/'>
+      <button>
+         HOME
+      </button>
+    </a>
+    </body>
+</html>

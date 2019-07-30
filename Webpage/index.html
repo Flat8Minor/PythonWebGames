@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Python Minigames
+    </title>
+    <link rel="stylesheet" href="/static/project_style.css">
+  </head>
+  <body>
+  <div id="container">
+    <table id="t_center">
+      <th colspan='2'>
+        <h1>
+          Pick any of the Games Below
+        </h1>
+      </th>
+      <tr>
+        <td>
+          <a href='/game2'>
+                <button>
+                 Black Jack
+                </button>
+          </a>
+        </td>
+        <td>
+                <a href='/game3'>
+                         <button>
+                                Naughts and Crosses
+                        </button>
+                </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+                <a href='/game1'>
+                        <button>
+                                Guess the Number
+                        </button>
+                </a>
+        </td>
+        <td>
+                <a href='/game4'>
+                        <button>
+                                Connect 4
+                        </button>
+                </a>
+        </td>
+      </tr>
+      <tr id='footer'>
+        <td colspan ='2' >
+          Hugh Glas IFB102 - Module 3 - QUT
+        </td>
+      </tr>
+      {% if gif %}
+        <tr>
+          <td colspan='2'>
+             <img id='reward' src='https://media1.giphy.com/media/l0Exj6t3iK0Xzv00E/source.gif'>
+          </td>
+        </tr>
+      {% endif %}
+    </table>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Python - BlackJack
+    </title>
+    <link rel="stylesheet" type="text/css" href="/static/project_style.css">
+  </head>
+  <body>
+    <p>
+      You are playing BlackJack the closer the player is too 21 is the winner <br>
+      However if you go over you immdiatly lose. <br>
+      Simply type 'H' to Hit or 'S' to Stand. <br>
+      ------------------------------------------------------------<br>
+    </p>
+    <p>
+      The computer has {{c_card}} <br>
+      ------------------------------------------------------------ <br>
+    </p>
+    {% if p_playing %}
+      {% if c_playing %}
+          <p>
+            You have {{p_hand}} <br>
+            ------------------------------------------------------------ <br>
+          </p>
+      {% endif %}
+    {% elif p_playing==False %}
+          <p>
+            You have busted with {{p_hand}} <br>
+            ------------------------------------------------------------ <br>
+          </p>
+          <a href='/game2'>
+             <button>
+               RESTART
+             </button>
+          </a>
+    {% endif %}
+    {% if c_playing==False %}
+      <p>
+        You have won <br>
+        The opponent busted <br>
+        ------------------------------------------------------------ <br>
+      </p>
+      <a href='/game2'>
+             <button>
+               RESTART
+             </button>
+      </a>
+    {% endif %}
+    {% if w=='p' %}
+        <p>
+                You have won <br>
+                Your card total is {{ p_hand }}. While the computer has {{ c_hand }} <br>
+                ------------------------------------------------------------ <br>
+        </p>
+        <a href='/game2'>
+             <button>
+               RESTART
+             </button>
+          </a>
+    {% elif w=='o' %}
+        <p>
+                You have lost <br>
+                The computer has {{ c_hand }}. You only had {{ p_hand }} <br>
+                ------------------------------------------------------------ <br>
+        </p>
+        <a href='/game2'>
+             <button>
+               RESTART
+             </button>
+          </a>
+    {% endif %}
+    {% if p_playing %}
+      {% if c_playing %}
+         {% if w == 'n' %}
+          <form action='/response_game2' method='POST'>
+                Enter your command:<input name='commands' id='enterField'>
+                <input type='submit'>
+          </form>
+         {% endif %}
+      {% endif %}
+    {% endif %}
+    <p>
+    ------------------------------------------------------------ <b>
+    </p>
+    <a href='/'>
+      <button>
+         HOME
+      </button>
+    </a>
+  </body>
+</html>

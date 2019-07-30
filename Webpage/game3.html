@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Python - Nuaghts and Crosses
+    </title>
+    <link rel='stylesheet' type='text/css' href='/static/project_style.css'>
+  </head>
+  <body>
+    <div id='content'>
+        <div class="row">
+            <div>
+               {% if gameboard[0][0] != 'n' %}
+                 {% if gameboard[0][0] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+            <div>
+               {% if gameboard[0][1] != 'n' %}
+                 {% if gameboard[0][1] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+            <div>
+               {% if gameboard[0][2] != 'n' %}
+                 {% if gameboard[0][2] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div>
+               {% if gameboard[1][0] != 'n' %}
+                 {% if gameboard[1][0] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+            <div>
+               {% if gameboard[1][1] != 'n' %}
+                 {% if gameboard[1][1] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+            <div>
+               {% if gameboard[1][2] != 'n' %}
+                 {% if gameboard[1][2] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div>
+               {% if gameboard[2][0] != 'n' %}
+                 {% if gameboard[2][0] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+            <div>
+               {% if gameboard[2][1] != 'n' %}
+                 {% if gameboard[2][1] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+            <div>
+               {% if gameboard[2][2] != 'n' %}
+                 {% if gameboard[2][2] == 'p' %}
+                  <img src='http://pluspng.com/img-png/circle-png-circle-png-hd-1600.png' height='175px' width='175px'></img>
+                {% else %}
+                  <img src='http://chittagongit.com/download/216632' height='175px' width='175px'></img>
+                {% endif %}
+               {% endif %}
+            </div>
+        </div>
+    </div>
+    <div float='right' id='information'>
+      <p>
+        | This is a game of Nuagts and Crosses<br>
+        | Enter your Coodinats based on the follwing <br>
+        | [(1)(2)(3)]<br>
+        | [(4)(5)(6)]<br>
+        | [(7)(8)(9)]<br>
+        ------------------------------------------------------------ <br>
+      {% if winner == 'n' %}
+       <form action='/response_game3' method='POST'>
+        | Enter Coordinates:<input type='text' name='coord' id='enterField'>
+        <input type='submit'>
+       </form>
+      {% elif winner == 'p' %}
+        <p>
+          | Congratulations you have won!<br>
+        </p>
+        <a href='/game3'>
+          <button>
+            RESTART<br>
+          </button>
+        </a>
+      {% elif winner == 'c' %}
+        <p>
+          | Bad Luck you have lost.<br>
+        </p>
+        <a href='/game3'>
+          <button>
+            RESTART<br>
+          </button>
+        </a>
+      {% endif %}
+      <p>
+        ------------------------------------------------------------ <br>
+      </p>
+      {% if errorCheck %}
+       <p>
+        | Please Enter a valid response<br>
+        ------------------------------------------------------------ <br>
+       </p>
+      {% endif %}
+      | <a href='/'>
+        <button>
+          HOME
+        </button>
+      </a>
+  </div>
+  </body>
+</html>

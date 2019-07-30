@@ -1,0 +1,78 @@
+html {
+  font-family: Verdana;
+  align:center;
+  background-color: #f1fffa;
+  color:#8f6593;
+}
+button:hover {
+  transition: 0.4s;
+  border-style: none;
+  background-color: #8f6593;
+  color:#aea4bf;
+}
+#t_center {
+  margin-left: auto;
+  margin-right: auto;
+}
+button{
+  color:#8f6593;
+  background-color:#aea4bf;
+  border-radius: 4px;
+  border-style: none;
+  height: 100px;
+  width:250px;
+  font-size: 20px;
+}
+#footer {
+  text-align:center;
+  font-style: oblique;
+  font-weight: bold;
+}
+#enterField {
+  height: auto;
+  width: 50px;
+}
+input {
+  color:#8f6593;
+  background-color:#aea4bf;
+  border-radius: 4px;
+  border-style: none;
+  height: 100px;
+  width:250px;
+  font-size: 20px;
+}
+input:hover {
+  transition: 0.4s;
+  border-style: none;
+  background-color: #8f6593;
+  color:#aea4bf;
+}
+.row div {
+  padding: 10px;
+  border: 2px solid #8f6593;
+  height: 175px;
+  width: 175px;
+  float: left;
+}
+.row {
+  clear: both;
+}
+#content {
+  float:left;
+}
+#information {
+  padding-left: 100px;
+}
+.rowC4 div {
+  padding: 10px;
+  border: 2px solid #8f6593;
+  height: 75px;
+  width: 75px;
+  float: left;
+}
+.rowC4 {
+  clear: both;
+}
+#reward {
+  padding-left: 82.4px;
+}
